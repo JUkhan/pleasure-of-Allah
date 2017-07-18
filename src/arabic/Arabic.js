@@ -1,14 +1,13 @@
 /** @jsx html */
 
 import {html, Router} from 'zaitun';
-import appService from './appService';
 
-export default class Home{ 
+export default class Arabic{ 
     constructor(){
        
     }
     init(){               
-        return {msg:'I love Allah.'}
+        return {}
     }    
     afterViewRender(model, dispatch){
      
@@ -18,17 +17,13 @@ export default class Home{
       
     } 	
     view({model, dispatch}){       
-         return <div>
-             <button on-click={[dispatch,{type:'notify'}]}>Notify</button>
-         </div>             
+         return <h1>Arabic</h1>             
                
     }   
     update(model, action){     
         
         switch (action.type) {          
-           case 'notify':
-           appService.notifyMsg('Pleasure of Allah', model.msg);
-           return model;
+           
             default:
                 return model;
         }

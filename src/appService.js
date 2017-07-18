@@ -1,9 +1,12 @@
 
+import {initNotifications, notify} from 'browser-notification';
+
 class appService{
     constructor(){
         this.popup=null;
         this._popup_promise_resolve=null;
         this._popup_btn_name='';
+        initNotifications({ignoreFocused: false});
     }
     setPopup(popup){
         this.popup=popup;
@@ -49,6 +52,14 @@ class appService{
             this._popup_promise_resolve=accept;
             this._popup_promise_reject=reject;
         });
+    }
+   /* {
+       body:string
+        timeout: ms,  // Auto-close notifications after 3 sec
+        cooldown: ms,  // Ignore new notify calls for 3 sec
+    }*/
+    notifyMsg(title, body){
+        notify(title, {body:body});
     }
 }
 

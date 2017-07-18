@@ -30,7 +30,8 @@ export class mainCom {
             },
             menu:[
                 {path:'Home', text:'Home'},
-                {path:'Quran', text:'Quran'}
+                {path:'Arabic', text:'Arabic Language'},
+                {path:'Quran', text:'Quran'},
             ]
         };
     }
@@ -62,12 +63,8 @@ export class mainCom {
         }
     }
     TopMenu({model}) {
-        return <nav classNames="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-            <button classNames="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span classNames="navbar-toggler-icon"></span>
-            </button>
-            <a classNames="navbar-brand" href="#/counter">Pleasure of Allah</a>
+        return <nav classNames="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">            
+            <a classNames="navbar-brand" href="#/Home">Pleasure of Allah</a>
             <div classNames="collapse navbar-collapse" id="navbarCollapse">
                 <ul classNames="navbar-nav mr-auto">
                     {model.map(nav=><li classNames="nav-item" class={{active:Router.activeRoute.navPath===nav.path}}><a classNames="nav-link" href={'#/'+nav.path}>{nav.text}</a></li>)}                   

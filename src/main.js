@@ -7,8 +7,8 @@ import {bootstrap} from 'zaitun';
 
 const routes=[
     {path:"/Home", component:Home},
-    {path:'/Quran', loadComponent:()=>System.import('./Quran')},    
-  
+    {path:'/Arabic', loadComponent:()=>System.import('./arabic/Arabic')},    
+    {path:'/Quran', loadComponent:()=>System.import('./Quran')}, 
   ];
 bootstrap({
   containerDom:'#app',
